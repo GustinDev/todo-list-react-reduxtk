@@ -15,6 +15,8 @@ export const taskSlice = createSlice({
     addTask: (state, action) => {
       console.log(state.tasks.push(action.payload));
     },
+    //CLEAR
+    //DELETE
   },
 });
 
