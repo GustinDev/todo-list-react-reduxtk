@@ -10,9 +10,9 @@ export const TaskList = () => {
   return (
     <div>
       <h1>List:</h1>
-      {taskList.map((task, index) => (
+      {taskList.map((task) => (
         <TaskCard
-          key={index}
+          key={task.id}
           id={task.id}
           name={task.name}
           description={task.description}

@@ -4,7 +4,7 @@ const TaskCard = ({ id, name, description }) => {
     <div>
       <div key={id}>
         <h1>{name}</h1>
-        <h1>{description}</h1>
+        <h4>{description}</h4>
       </div>
     </div>
   );

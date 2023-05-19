@@ -1,15 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  tasks: [
-    { id: 1, name: 'Play', description: 'Rank in Valorant', complete: false },
-    {
-      id: 1,
-      name: 'Dance',
-      description: 'Dance with Pepito ',
-      complete: false,
-    },
-  ],
+  tasks: [],
 };
 
 //Aqui creamos los reducers (slice).
@@ -19,13 +11,14 @@ export const taskSlice = createSlice({
   initialState,
   //Ponemos los reducer normalmente (como funciones en un objeto):
   reducers: {
-    taskStart: (state) => {
-      console.log(state.tasks);
+    //Al depacharla recibimos por parámetro el payload: la data. El type es el nombre de la fun.
+    addTask: (state, action) => {
+      console.log(state.tasks.push(action.payload));
     },
   },
 });
 
 //Exportamos los reducers
-export const { taskStart } = taskSlice.actions;
+export const { addTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
