@@ -3,6 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   tasks: [
     { id: 1, name: 'Play', description: 'Rank in Valorant', complete: false },
+    {
+      id: 1,
+      name: 'Dance',
+      description: 'Dance with Pepito ',
+      complete: false,
+    },
   ],
 };
 
