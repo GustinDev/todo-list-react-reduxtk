@@ -1,20 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-//Estado inicial.
 const initialState = {
-  tasks: [],
+  tasks: [
+    { id: 1, name: 'Play', description: 'Rank in Valorant', complete: false },
+  ],
 };
 
 //Aqui creamos los reducers (slice).
 export const taskSlice = createSlice({
-  //Le ponemos un nombre y lo pasamos con el estado inicial.
-  name: 'taskManager',
+  //Le ponemos un nombre y lo pasamos junto con el estado inicial.
+  name: 'taskSlice', //Ponerle el mismo nombre que se le pone al de la store.
   initialState,
   //Ponemos los reducer normalmente (como funciones en un objeto):
-  //Accedemos a los estados normalmente:
   reducers: {
     taskStart: (state) => {
-      state.tasks = [];
+      console.log(state.tasks);
     },
   },
 });
