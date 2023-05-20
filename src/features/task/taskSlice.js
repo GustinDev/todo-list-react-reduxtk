@@ -13,14 +13,15 @@ export const taskSlice = createSlice({
   reducers: {
     //Al depacharla recibimos por parámetro el payload: la data. El type es el nombre de la fun.
     addTask: (state, action) => {
-      console.log(state.tasks.push(action.payload));
+      state.tasks.push(action.payload);
     },
-    //CLEAR
-    //DELETE
+    deleteTask: (state, action) => {
+      state.tasks = state.tasks.filter((task) => task.id !== action.payload);
+    },
   },
 });
 
 //Exportamos los reducers
-export const { addTask } = taskSlice.actions;
+export const { addTask, deleteTask } = taskSlice.actions;
 
 export default taskSlice.reducer;

@@ -34,6 +34,11 @@ export const TaskForm = () => {
         completed: false,
       })
     );
+
+    setValueInput({
+      name: '',
+      description: '',
+    });
   };
 
   return (
@@ -43,8 +48,9 @@ export const TaskForm = () => {
         <input
           name='name'
           type='text'
-          placeholder='tiltle'
+          placeholder='title'
           onChange={onInputChange}
+          value={valueInput.name}
         />
         <textarea
           name='description'
@@ -52,6 +58,7 @@ export const TaskForm = () => {
           rows='10'
           placeholder='description'
           onChange={onInputChange}
+          value={valueInput.description}
         ></textarea>
         <button type='submit'>Save</button>
       </form>
