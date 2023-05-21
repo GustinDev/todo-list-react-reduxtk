@@ -1,9 +1,12 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 //ID:
 import { v4 as uuid } from 'uuid';
 //Reducers:
-import { addTask } from '../features/task/taskSlice';
+import { addTask, editTask } from '../features/task/taskSlice';
+//React-Router-Dom
+import { useParams, useNavigate } from 'react-router-dom';
 
 export const TaskForm = () => {
   //Dispara eventos - reducers.
@@ -23,27 +26,48 @@ export const TaskForm = () => {
     });
   };
 
+  //EDIT:
+
+  let tasks = useSelector((state) => state.tasksUser.tasks);
+
+  const params = useParams();
+  useEffect(() => {
+    if (params.id) {
+      let taskToEdit = tasks.find((task) => task.id === params.id);
+      setValueInput(taskToEdit);
+      console.log(taskToEdit);
+    }
+  }, []);
+
+  const navigate = useNavigate();
+
   let handleSubmit = (e) => {
     e.preventDefault();
-    console.log(valueInput);
-    //Despachamos el reducer y por parámetros la data (el payload).
-    dispatch(
-      addTask({
-        ...valueInput,
-        id: uuid(),
-        completed: false,
-      })
-    );
+    //Edit:
+    if (params.id) {
+      //Si hay ID, le pasamos el objeto (nuevo).
+      dispatch(editTask(valueInput));
+    } else {
+      //Crear: Despachamos el reducer y por parámetros la data (el payload).
+      dispatch(
+        addTask({
+          ...valueInput,
+          id: uuid(),
+          completed: false,
+        })
+      );
+    }
 
     setValueInput({
       name: '',
       description: '',
     });
+
+    navigate('/');
   };
 
   return (
     <div>
-      <h1>Add Tasks</h1>
       <form onSubmit={handleSubmit}>
         <input
           name='name'

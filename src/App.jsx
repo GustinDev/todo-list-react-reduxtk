@@ -1,18 +1,21 @@
 import './App.css';
 // import { useSelector } from 'react-redux';
-import { TaskList } from './components/TaskList';
+
+BrowserRouter;
+//Standard Import
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import TaskContainer from './components/TaskContainer';
+//import TaskEdit from './components/TaskEdit';
 import { TaskForm } from './components/TaskForm';
 
 function App() {
-  //Entramos a las task definidas en initial State (taskSlice).
-  // const tasksState = useSelector((state) => state.tasks);
-
   return (
-    <>
-      <h1>To Dos</h1>
-      <TaskForm />
-      <TaskList />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<TaskContainer />} />
+        <Route path='/edit/:id' element={<TaskForm />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
