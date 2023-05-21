@@ -9,7 +9,7 @@ export const TaskList = () => {
 
   return (
     <div>
-      <h1>List:</h1>
+      <h1 className='font-mono ...'>List:</h1>
       {taskList.map((task) => (
         <TaskCard
           key={task.id}
