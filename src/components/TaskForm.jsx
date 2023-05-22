@@ -67,7 +67,7 @@ export const TaskForm = () => {
   };
 
   return (
-    <div className='cotainer flex w-8/12 justify-center content-center'>
+    <div className='container flex w-8/12 justify-center content-center items-center'>
       <form
         className='flex flex-col w-8/12 justify-center content-center items-center'
         onSubmit={handleSubmit}
@@ -76,7 +76,7 @@ export const TaskForm = () => {
           className='bg-gray-50 border m-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-8/12  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-50 dark:focus:border-blue-500'
           name='name'
           type='text'
-          placeholder='title'
+          placeholder='Tiltle'
           onChange={onInputChange}
           value={valueInput.name}
         />
@@ -85,7 +85,7 @@ export const TaskForm = () => {
           name='description'
           cols='10'
           rows='2'
-          placeholder='description'
+          placeholder='Description'
           onChange={onInputChange}
           value={valueInput.description}
         ></textarea>

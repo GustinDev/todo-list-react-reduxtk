@@ -12,7 +12,7 @@ const TaskCard = ({ id, name, description }) => {
 
   return (
     <div
-      className='w-auto p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-600 dark:border-gray-700 m-5'
+      className='min-w-900 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-600 dark:border-gray-700 m-5'
       key={id}
     >
       <h1 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>

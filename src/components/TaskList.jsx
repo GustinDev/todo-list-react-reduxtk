@@ -8,9 +8,9 @@ export const TaskList = () => {
   console.log(taskList);
 
   return (
-    <div className='w-6/12'>
-      <h1 className=''>List:</h1>
-      <div className='flex flex-row'>
+    <div className='w-full m-5 flex items-center justify-center flex-col'>
+      <h1 className='text-4xl font-extrabold text-black '>Current Tasks:</h1>
+      <div className='flex flex-row flex-wrap  items-center justify-center'>
         {taskList.map((task) => (
           <TaskCard
             key={task.id}

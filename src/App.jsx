@@ -10,12 +10,14 @@ import { TaskForm } from './components/TaskForm';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<TaskContainer />} />
-        <Route path='/edit/:id' element={<TaskForm />} />
-      </Routes>
-    </BrowserRouter>
+    <div className='w-full flex items-center justify-center'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<TaskContainer />} />
+          <Route path='/edit/:id' element={<TaskForm />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
