@@ -8,16 +8,18 @@ export const TaskList = () => {
   console.log(taskList);
 
   return (
-    <div>
-      <h1 className='font-mono ...'>List:</h1>
-      {taskList.map((task) => (
-        <TaskCard
-          key={task.id}
-          id={task.id}
-          name={task.name}
-          description={task.description}
-        />
-      ))}
+    <div className='w-6/12'>
+      <h1 className=''>List:</h1>
+      <div className='flex flex-row'>
+        {taskList.map((task) => (
+          <TaskCard
+            key={task.id}
+            id={task.id}
+            name={task.name}
+            description={task.description}
+          />
+        ))}
+      </div>
     </div>
   );
 };
