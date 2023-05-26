@@ -31,11 +31,11 @@ export const TaskForm = () => {
   let tasks = useSelector((state) => state.tasksUser.tasks);
 
   const params = useParams();
+
   useEffect(() => {
     if (params.id) {
       let taskToEdit = tasks.find((task) => task.id === params.id);
       setValueInput(taskToEdit);
-      console.log(taskToEdit);
     }
   }, []);
 

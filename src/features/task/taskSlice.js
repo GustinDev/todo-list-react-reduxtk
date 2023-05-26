@@ -7,7 +7,7 @@ const initialState = {
 //Aqui creamos los reducers (slice).
 export const taskSlice = createSlice({
   //Le ponemos un nombre y lo pasamos junto con el estado inicial.
-  name: 'taskSlice', //Ponerle el mismo nombre que se le pone al de la store.
+  name: 'taskUser', //Ponerle el mismo nombre que se le pone al de la store.
   initialState,
   //Ponemos los reducer normalmente (como funciones en un objeto):
   reducers: {
